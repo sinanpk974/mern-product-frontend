@@ -39,7 +39,7 @@ const Edited = () => {
       }
     
       axios
-        .get(`${import.meta.env.VITE_SERVER_URL}display/${id}`, {
+        .get(`${import.meta.env.VITE_SERVER_URL}api/display/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -78,7 +78,7 @@ const Edited = () => {
         console.log(token);
 
         if(token){
-        const res = await axios.put(`${import.meta.env.VITE_SERVER_URL}update/${id}`,product,{
+        const res = await axios.put(`${import.meta.env.VITE_SERVER_URL}api/update/${id}`,product,{
             headers:{
                 Authorization:`Bearer ${token}`
             }

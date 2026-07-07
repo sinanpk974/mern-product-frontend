@@ -19,7 +19,7 @@ function Login() {
   const handlelogin = async(e)=>{
     e.preventDefault()
      try{
-        const res = await axios.post(`${import.meta.env.VITE_SERVER_URL}login`,formData)
+        const res = await axios.post(`${import.meta.env.VITE_SERVER_URL}api/login`,formData)
         console.log(res);
         
         localStorage.setItem("token", res.data.token);

@@ -7,7 +7,7 @@ function Home() {
 const [product,setProduct]=useState([])
 
   useEffect(()=>{
-    axios.get(`${import.meta.env.VITE_SERVER_URL}display`)
+    axios.get(`${import.meta.env.VITE_SERVER_URL}api/display`)
     .then((res)=>{
         console.log(res.data);
         setProduct(res.data)

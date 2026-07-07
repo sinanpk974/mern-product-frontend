@@ -47,7 +47,7 @@ function AddProd() {
         console.log(token);
 
         if(token){
-        const res = await axios.post(`${import.meta.env.VITE_SERVER_URL}adddata`,formData,{
+        const res = await axios.post(`${import.meta.env.VITE_SERVER_URL}api/adddata`,formData,{
             headers:{
                 Authorization:`Bearer ${token}`
             }

@@ -18,7 +18,7 @@ const Product = () => {
   const token = localStorage.getItem("token");
   
   axios
-    .get(`${import.meta.env.VITE_SERVER_URL}display/${id}`, {
+    .get(`${import.meta.env.VITE_SERVER_URL}api/display/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -51,7 +51,7 @@ const Product = () => {
     try{
         const token = localStorage.getItem("token");
         if(token){
-        const res = await axios.delete(`${import.meta.env.VITE_SERVER_URL}delete/${id}`,{
+        const res = await axios.delete(`${import.meta.env.VITE_SERVER_URL}api/delete/${id}`,{
             headers:{
                 Authorization:`Bearer ${token}`
             }

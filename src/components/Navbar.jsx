@@ -13,7 +13,7 @@ function Navbar() {
   const searchPro = async () => {
   try {
     const token = localStorage.getItem("token");
-    const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}display`, {
+    const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}api/display`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
