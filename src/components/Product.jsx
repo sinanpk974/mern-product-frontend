@@ -27,6 +27,7 @@ const Product = () => {
       
     })
     .then((res) => {
+      console.log(res)
       console.log(res.data);
       setProduct(res.data);
     })
