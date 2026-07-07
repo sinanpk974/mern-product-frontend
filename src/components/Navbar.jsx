@@ -12,11 +12,11 @@ function Navbar() {
 
   const searchPro = async () => {
   try {
-    const token = localStorage.getItem("token");
+    // const token = localStorage.getItem("token");
     const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}api/display`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+      // headers: {
+      //   Authorization: `Bearer ${token}`,
+      // },
     });
 
     const products = res.data;
