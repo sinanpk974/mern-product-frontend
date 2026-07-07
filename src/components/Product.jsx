@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom'
 const Product = () => {
 
     const { id } = useParams();
+    console.log("id",id);
+    
 
     const navigate = useNavigate();
 
