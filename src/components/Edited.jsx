@@ -74,14 +74,14 @@ const Edited = () => {
     const handleSubmit = async(e)=>{
     e.preventDefault()
      try{
-        // const token = localStorage.getItem('token')
-        // console.log(token);
+        const token = localStorage.getItem('token')
+        console.log(token);
 
-        // if(token){
+        if(token){
         const res = await axios.put(`${import.meta.env.VITE_SERVER_URL}api/update/${id}`,product,{
-            // headers:{
-            //     Authorization:`Bearer ${token}`
-            // }
+            headers:{
+                Authorization:`Bearer ${token}`
+            }
         })
         console.log(res);
         
@@ -90,10 +90,10 @@ const Edited = () => {
         
         navigate("/home")
 
-    //  }else{
-    //     alert("please login")
-    //     navigate('/login')
-    //  }
+     }else{
+        alert("please login")
+        navigate('/login')
+     }
   
      }catch(error){
         console.log(error);

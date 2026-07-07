@@ -17,13 +17,13 @@ const Product = () => {
     const [product,setProduct]=useState(null)
 
   useEffect(() => {
-  // const token = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
   
   axios
     .get(`${import.meta.env.VITE_SERVER_URL}api/display/${id}`, {
-      // headers: {
-      //   Authorization: `Bearer ${token}`,
-      // },
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
       
     })
     .then((res) => {
@@ -52,12 +52,12 @@ const Product = () => {
 
   const deletePro= async()=>{
     try{
-        // const token = localStorage.getItem("token");
-        // if(token){
+        const token = localStorage.getItem("token");
+        if(token){
         const res = await axios.delete(`${import.meta.env.VITE_SERVER_URL}api/delete/${id}`,{
-            // headers:{
-            //     Authorization:`Bearer ${token}`
-            // }
+            headers:{
+                Authorization:`Bearer ${token}`
+            }
         })
         
         
@@ -66,10 +66,10 @@ const Product = () => {
         
         navigate("/home")
 
-    //  }else{
-    //     alert("please login")
-    //     navigate('/login')
-    //  }
+     }else{
+        alert("please login")
+        navigate('/login')
+     }
   
      }catch(error){
         console.log(error);
